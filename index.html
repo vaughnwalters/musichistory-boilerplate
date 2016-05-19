@@ -1,13 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-
 <body>
 
+<header>
+	<ul class="top">
+		<li><a href="">View Music</a></li>
+		<li> | </li>
+		<li><a href="">Add Music</a></li>
+		<li> | </li>
+		<li><a href="">Profile</a></li>
+	</ul>
+</header>
 
+<article>
+	<div class="bothSides">
+		<!-- left section -->
+		<div class="left">
+			<div><label>Song Length</label></div>
+			<div class="sliderRange">
+				<input type="range" name="Song length:" min="0" max="10" width=100%;>
+			</div>
+			
+			<div>
+				<label>Artist:</label>
+			</div>
+
+			<div>
+				<select width="100%" name="Artist" class="fullWidth">
+				  <option value="value1">Bad Company</option> 
+				  <option value="value2">Hank Jr</option>
+				  <option value="value3">Blind Blake</option>
+				  <option value="value3">Nick Drake</option>
+				</select>
+			</div>
+			
+			<div><label>Album:</label></div>
+			<div>
+				<select name="Album" class="fullWidth">
+				  <option value="value1">Value 1</option> 
+				  <option value="value2">Value 2</option>
+				  <option value="value3">Value 3</option>
+				  <option value="value3">Value 3</option>
+				</select>
+		  </div>
+
+	 	  <div>
+	 	    <label>Genre:</label>
+	 	  </div>
+	 	  <div class="genreListContainer">
+	 	  	
+		  	<div class="genreList">
+			  	<ul>
+					  <li><label for="rock"><input type="checkbox" id="rock">Rock</label></li>
+					  <li><label for="pop"><input type="checkbox" id="pop">Pop</label></li>
+					  <li><label for="blues"><input type="checkbox" id="blues">Blues</label></li>
+					</ul>
+				</div>
+				<div class="genreList">	
+			    <ul>	  
+					  <li><label for="classical"><input type="checkbox" id="classical">Classical</label></li>
+					  <li><label for="jazz"><input type="checkbox" id="jazz">Jazz</label></li>
+					  <li><label for="hipHop"><input type="checkbox" id="hipHop">Hip Hop</label></li>
+					</ul>  
+				</div>
+	 	  </div>
+				
+				<div class="filterButton">
+				 <button value="filter">Filter</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- right section -->
+		<div class="right">
+			<h1>Song Title</h1>
+			<ul class="songInfoRight">
+				<li>Artist Name</li>
+				<li> | </li>
+				<li>Album Name</li>
+				<li> | </li>
+				<li>Genre</li>
+			</ul>
+
+			<h1>Song Title</h1>
+			<ul class="songInfoRight">
+				<li>Artist Name</li>
+				<li> | </li>
+				<li>Album Name</li>
+				<li> | </li>
+				<li>Genre</li>
+			</ul>
+		
+			<h1>Song Title</h1>
+			<ul class="songInfoRight">
+				<li>Artist Name</li>
+				<li> | </li>
+				<li>Album Name</li>
+				<li> | </li>
+				<li>Genre</li>
+			</ul>
+
+			<h1>Song Title</h1>
+			<ul class="songInfoRight">
+				<li>Artist Name</li>
+				<li> | </li>
+				<li>Album Name</li>
+				<li> | </li>
+				<li>Genre</li>
+			</ul>
+		</div>
+	</article> 
+	<!-- why isnt this article or div above it being closed out? -->
+	<!-- range slider to 100% -->
+	<!-- genre elements to line vertically -->
 </body>
 </html>
