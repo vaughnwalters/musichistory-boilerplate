@@ -1,0 +1,29 @@
+.title {
+  font-size: 1em;
+  padding: 10px 10px 0 10px;
+}
+
+.artist {
+  font-size:.75em;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.album {
+  font-size: .75em;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.deleteButton {
+  margin-left: 20px;
+  display: inline;
+  width: 50px;
+  height: 5px;
+  text-align: center;
+  clear: both;
+}
+
+#addSongs {
+  margin: 10px 0 0 20px;
+}
