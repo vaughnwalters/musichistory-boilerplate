@@ -1,14 +1,13 @@
-var employeeBio = document.getElementById("eContainer");
+// to create message array from messages object
 
-for (var i = 0; i < sunEmployees.length; i++) {
-  var selectedEmployee = sunEmployees[i];
+  // var fiveMessagesRequest = new XMLHttpRequest ();
+  // fiveMessagesRequest.open("GET", "messages.json");
+  // fiveMessagesRequest.send();
+  // fiveMessagesRequest.addEventListener("load", function(){
+  //   messages = JSON.parse(event.target.responseText).messages;
+  //   callbackFunction(messages)
+  // })
 
-  employeeBio.innerHTML += 
-    "<div class='employee'>" +
-      "<div class='eName'>" + selectedEmployee.name + "</div>" +
-      "<div class='eTitle'>" + selectedEmployee.title + "</div>" +
-      "<img class='eImage' src='" + selectedEmployee.image + "'>" + 
-      "<div class='eDescription'>" + selectedEmployee.description + 
-      "</div>" +
-    "</div>";
-};
+  $.ajax({
+    url: "messages.json"
+  }).done(callbackFunction);
