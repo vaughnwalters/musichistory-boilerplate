@@ -1,19 +1,14 @@
 "use strict";
- 
-var myRequest = new XMLHttpRequest();
-myRequest.open("GET", "songs.json");
-myRequest.send();
-myRequest.addEventListener("load", executeThisCodeAfterFileIsLoaded);
 
-function executeThisCodeAfterFileIsLoaded () {
-  var songsObject = JSON.parse(event.target.responseText);
-  var songsArray = songsObject.songs;
-  populateDOM(songsArray);
-}
+$.ajax({
+    url: "songs.json"
+  }).done(function(cont){
+    populateDOM(cont);
+  });
 
-function populateDOM (songsArray) {
-  for (var i = 0; i < songsArray.length; i++) {
-  var songItem = songsArray[i];
+function populateDOM (cont) {
+  for (var i = 0; i < cont.songs.length; i++) {
+  var songItem = cont.songs[i];
   $("#inputSongs").append( 
     `<div class="songList"> 
       <div class="title">  ${songItem.title}  </div> 
@@ -24,23 +19,17 @@ function populateDOM (songsArray) {
   }
 }
 
+function addSecondJSONfile() {
+  $.ajax({
+    url: "songs2.json"
+  }).done(function(moreSongs){
+    populateDOM(moreSongs);
+  });
+}
+
 $("#inputSongs").on("click", ".deletebutton", function(event) {   
   $(this).parent().remove();
 }); 
-
-function addMoreSongs () {
-  console.log("event", event);
-  var songsObject = JSON.parse(event.target.responseText);
-  var songsArray = songsObject.songs;
-  populateDOM(songsArray);
-}
-
-function addSecondJSONfile() {
-  var addSongs = new XMLHttpRequest();
-  addSongs.open("GET", "songs2.json");
-  addSongs.send();
-  addSongs.addEventListener("load", addMoreSongs);
-}
 
 $("#addSongs").click(addSecondJSONfile);
 
