@@ -1,0 +1,1 @@
+{"/Users/vaughnwalters/workspace/exercises/musichistory/gulpfile.js":{"sha1":"c3acd4f26d3cee0ab497a55ec5c75adf358a9d7e","tasks":{"browserify":{"name":"browserify","dependencies":""},"lint":{"name":"lint","dependencies":""},"watch":{"name":"watch","dependencies":""},"default":{"name":"default","dependencies":"lint watch"}}}}
