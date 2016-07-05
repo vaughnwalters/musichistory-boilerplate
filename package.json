@@ -19,6 +19,7 @@
     "lodash.assign": "^4.0.9",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "jshint-stylish": "^2.2.0"
   }
 }

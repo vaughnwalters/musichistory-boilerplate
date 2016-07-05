@@ -1,3 +1,6 @@
+// clean up this gulp file, run gulp to lint, and then push branch up to github branch
+
+
 "use strict";
 
 //use npm install --save to install all of these dependencies first
@@ -75,3 +78,19 @@ gulp.task('watch', function() {
 
 // This task runs when you type `gulp` in the CLI
 gulp.task('default', ['lint', 'watch'], bundle);
+
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var watch = require('gulp-watch');
+
+gulp.task('default', ['lint', 'watch']);
+
+gulp.task('watch', function() { 
+  gulp.watch('./src/**/*.js', ['lint']);
+});
+
+gulp.task('lint', function() {
+  return gulp.src('./src/**/*.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'));
+});
