@@ -91,7 +91,7 @@ article {}
 	margin: auto;
 }
 
-button {
+/*button {
 	margin: auto;
 	display: inline;
 	width: 80px;
@@ -103,7 +103,7 @@ button {
 	text-align: center;
 	clear: both;
 }
-
+*/
 select {
 	width: 100%;
 }
