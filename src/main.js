@@ -3,14 +3,19 @@
 var $ = require("jquery");
 var loader = require("./loader")
 
+// show viewMusic view on click
 $("#viewMusic").click(() => {
   event.preventDefault();
-  console.log("viewMusic");
+  $("#showSongs").show();
+  $("#inputSongs").hide();
 });
 
+
+// show addMusic view on click
 $("#addMusic").click(() => {
   event.preventDefault();
-  console.log("addMusic");
+  $("#showSongs").hide();
+  $("#inputSongs").show();
 });
 
 

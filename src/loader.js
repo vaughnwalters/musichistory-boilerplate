@@ -5,22 +5,15 @@ var $ = require("jquery");
 // document ready
 $(() => {
 
+// hide inputSongs div on page load
+  (function(){
+    $("#inputSongs").hide()
+  }())
+
+
   let songHolder;
 
-// add new song to array
-  $("#addSong").on("click", () => {
-    let newSong = {
-      "title" : $("#titleInput").val(),
-      "artist" : $("#artistInput").val(),
-      "album" : $("#albumInput").val()  
-    };
-    // pushing newSong into array
-    songHolder.songs.push(newSong);
-    populateDOM(songHolder);
-    console.log("songHolder",songHolder);
-  }) 
-
-
+  // get initial songs from json file
   $.ajax({
     url: "songs.json"
   }).done(function(cont) {
@@ -28,8 +21,9 @@ $(() => {
     populateDOM(songHolder);
   });
 
+  // populate dom with contents from array in the object
   function populateDOM(cont) {
-    let counter = 0;
+    let counter = -1;
     $("#showSongs").html("");
     for (let i = 0; i < cont.songs.length; i++) {
       let songItem = cont.songs[i];
@@ -42,17 +36,35 @@ $(() => {
         <button class="deletebutton">Delete It</button> 
       </div>`);
     }
+
+    // append artist and album selectors here with array data
+  
   }
 
+// add new song to array
+  $("#addSong").on("click", () => {
+    let newSong = {
+      "title" : $("#titleInput").val(),
+      "artist" : $("#artistInput").val(),
+      "album" : $("#albumInput").val()  
+    };
+    // pushing newSong into array
+    songHolder.songs.push(newSong);
+    populateDOM(songHolder);
+    $("#titleInput").val("");
+    $("#artistInput").val("");
+    $("#albumInput").val(""); 
+    
+  }); 
 
 
 
-// how to remove song from array, not just the DOM
+// remove songs from the array
   $("#showSongs").on("click", ".deletebutton", (event) => {
-    console.log($(event.target).parent().attr("id"));
-    console.log("songHolder", songHolder);
-    let test = $(event.target).parent().attr("id");
-    targetNumberID = test.split("--")[1]
+    let divID = $(event.target).parent().attr("id");
+    let targetNumberID = divID.split("--")[1];
+    songHolder.songs.splice(targetNumberID, 1);
+    populateDOM(songHolder);
   });
 
   module.exports = {populateDOM}
