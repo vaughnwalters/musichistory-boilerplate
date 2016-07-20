@@ -4,18 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" type="text/css" href="css/musicHistory5.css">
-</head>
+	</head>
 <body>
 
 <header>
 	<ul class="top">
-		<li><a href="">View Music</a></li>
+		<li><a id="viewMusic" href="#">View Music</a></li>
 		<li> | </li>
-		<li><a href="">Add Music</a></li>
-		<li> | </li>
-		<li><a href="">Profile</a></li>
+		<li><a id="addMusic" href="#">Add Music</a></li>
 	</ul>
 </header>
 
@@ -81,15 +79,37 @@
 		<!-- right section -->
 
 		<div class="right">
-		<div id="inputSongs"></div>
-		<div id="inputSongs2"></div>
-		<button id="addSongs">More ></button>
+			<div id="showSongs"></div>
 
-
+			<div id="inputSongs">
+				<div>Title</div>
+					<input type="text" class="input" id="titleInput" autofocus>
+				<div>Artist</div>
+					<input type="text" class="input" id="artistInput">
+				<div>Album</div>
+					<input type="text" class="input" id="albumInput">
+				<div><button id="addSong">Add Song</button></div>
+			</div>
  		</div>
  		
 	</article> 
-  	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="src/main.js"></script>
+	 
+	  <script src="/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<script src="dist/bundle.js"></script>
+		
+		<!-- firebase stuff -->
+		<!-- 
+		<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBMxSHzXGdh9BJadX7M3WJuBbLC8i9Gt10",
+		    authDomain: "music-history-55d61.firebaseapp.com",
+		    databaseURL: "https://music-history-55d61.firebaseio.com",
+		    storageBucket: "",
+		  };
+		  firebase.initializeApp(config);
+		</script> -->
+		
 </body>
 </html>
