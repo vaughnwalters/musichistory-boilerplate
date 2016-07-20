@@ -20,55 +20,23 @@
 <article>
 	<div class="bothSides">
 		<!-- left section -->
-		<div class="left">
-			<div><label>Song Length</label></div>
-			<div class="sliderRange">
-				<input type="range" name="Song length:" min="0" max="10" width=100%;>
-			</div>
-			
+		<div class="left">	
 			<div>
 				<label>Artist:</label>
 			</div>
 
 			<div>
-				<select width="100%" name="Artist" class="fullWidth">
-				  <option value="value1">Bad Company</option> 
-				  <option value="value2">Hank Jr</option>
-				  <option value="value3">Blind Blake</option>
-				  <option value="value3">Nick Drake</option>
+				<select width="100%" name="Artist" id = "artistFilter" class="fullWidth">
+				  
 				</select>
 			</div>
 			
 			<div><label>Album:</label></div>
 			<div>
-				<select name="Album" class="fullWidth">
-				  <option value="value1">a</option> 
-				  <option value="value2">b</option>
-				  <option value="value3">c</option>
-				  <option value="value3">d</option>
+				<select name="Album" id="albumFilter" class="fullWidth">
 				</select>
 		  </div>
 
-	 	  <div>
-	 	    <label>Genre:</label>
-	 	  </div>
-	 	  <div class="genreListContainer">
-	 	  	
-		  	<div class="genreList">
-			  	<ul>
-					  <li><label for="rock"><input type="checkbox" id="rock">Rock</label></li>
-					  <li><label for="pop"><input type="checkbox" id="pop">Pop</label></li>
-					  <li><label for="blues"><input type="checkbox" id="blues">Blues</label></li>
-					</ul>
-				</div>
-				<div class="genreList">	
-			    <ul>	  
-					  <li><label for="classical"><input type="checkbox" id="classical">Classical</label></li>
-					  <li><label for="jazz"><input type="checkbox" id="jazz">Jazz</label></li>
-					  <li><label for="hipHop"><input type="checkbox" id="hipHop">Hip Hop</label></li>
-					</ul>  
-				</div>
-	 	  </div>
 				
 				<div class="filterButton">
 				 <button value="filter">Filter</button>

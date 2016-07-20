@@ -19,6 +19,7 @@ $(() => {
   }).done(function(cont) {
     songHolder = cont;
     populateDOM(songHolder);
+
   });
 
   // populate dom with contents from array in the object
@@ -36,10 +37,35 @@ $(() => {
         <button class="deletebutton">Delete It</button> 
       </div>`);
     }
-
+// call function to populate artist select options
     // append artist and album selectors here with array data
-  
+    popArtistFilter(cont);
+    popAlbumFilter(cont);
   }
+
+// populate the artist filter select options
+  function popArtistFilter (cont) {
+    $("#artistFilter").html("");
+    for (let i=0; i < cont.songs.length; i++) {
+      let songItem = cont.songs[i];
+      $("#artistFilter").append(
+        `<option value = ${songItem.title}>${songItem.title}</option>
+      `)
+    }
+  }
+
+// populate the album filter select options
+  function popAlbumFilter (cont) {
+    $("#albumFilter").html("");
+    for (let i=0; i < cont.songs.length; i++) {
+      let songItem = cont.songs[i];
+      $("#albumFilter").append(
+        `<option value = ${songItem.album}>${songItem.album}</option>
+      `)
+    }
+  }
+
+
 
 // add new song to array
   $("#addSong").on("click", () => {
@@ -54,7 +80,7 @@ $(() => {
     $("#titleInput").val("");
     $("#artistInput").val("");
     $("#albumInput").val(""); 
-    
+
   }); 
 
 
@@ -66,6 +92,8 @@ $(() => {
     songHolder.songs.splice(targetNumberID, 1);
     populateDOM(songHolder);
   });
+
+
 
   module.exports = {populateDOM}
 });
@@ -93,26 +121,3 @@ $(() => {
 // yellow portion of the DOM?
 
 
-
-
-// DEPRECATED FROM MUSIC HISTORY 5
-
-  // $("#addSongs").click(function() {
-  //   addSecondJSONfile()
-  //   .then(function(moreSongs) {
-  //     populateDOM(moreSongs);
-  //   })
-  // })
-
-  // var addSecondJSONfile = function() {
-  //   return new Promise((resolve, reject) => {
-  //     $.ajax({
-  //       url: "songs2.json"
-  //     }).done(function(moreSongs) {
-  //       resolve(moreSongs);
-  //       // after resolve then gets access to moreSongs
-  //       // "then" is a function that sets up event listeners
-  //       // waiting for resolve to get called
-  //     }).fail(function(xhr, status, error) {});
-  //   });
-  // };
